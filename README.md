@@ -1,5 +1,6 @@
-# run backend using 
-Please use python3 to run the following set of commands
+# Run backend and frontend to run the project
+## To run the Backend use the following steps
+### Please use python3 to run the following set of commands
 1. `cd backend`
 2. To install all the required dependencies use :- `python -m pip install -r requirements.txt`
         OR
