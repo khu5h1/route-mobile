@@ -10,4 +10,4 @@
 5. To migrate changes use `python manage.py migrate`.
 6. To run the backend server use `python manage.py runserver`.
 7. open URL [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) to check the running server and login using credentials _username_:`9876543210` and _password_ : `9876543210`.
-8. 
+8. After logging in you can see all the database tables which are used in the project.
