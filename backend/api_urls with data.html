@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>Blah Project Docs</title>
+    </head>
+    <style>
+        body
+        {
+            height:100%;
+            width: 100%;
+        }
+    </style>
+<body>
+<h1>Request URLS</h1>
+<ol>
+    <li><h4>Registeration URL</h4>
+        <ul>
+            <li>
+URL(Post) - [http://127.0.0.1:8000/accounts/register/]</li><pre>
+<li><b>Data_to_be_given</b> - {
+
+    "userid": "",
+    "pass": "",
+    "email_address": "",
+    "fname": "",
+    "lname": "",
+    "mobile": "",
+    "home": ""
+}
+<b>Data_this_will_return</b> - {
+    "detail": "User Created Successfully.  Now perform Login to get your token"
+}
+status code : HTTP_200_OK
+OR
+<b>Data_this_will_return</b> - {
+    "detail": "Fields missing"
+}
+status code : HTTP_400_BAD_REQUEST
+OR
+<b>Data_this_will_return</b> - {
+    "detail": "A user with that username already exists or The data you entered is not valid"
+}
+status code : HTTP_400_BAD_REQUEST
+</li></pre></ul>
+</li>
+
+
+
+<li><h4>Login related URLS</h4>
+<ul>
+    <li>
+URL(Post) - [http://127.0.0.1:8000/accounts/login/]</li><pre>
+<li><b>Data_to_be_given</b> - {
+    "userid": "",
+    "pass": ""
+}
+<b>Data_this_will_return</b> -
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxMDE2NjAzNiwianRpIjoiNjRjOTViYjg2NTQ0NGFkMGIxY2U3MmY1NTJmNzY1ZWEiLCJ1c2VyX2lkIjo2fQ.xvfa988lBdqPO1jCVMzhTPD52YyZysNWVwaZWmPovUc",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEwMDc5OTM2LCJqdGkiOiJmZjE1MTY3NjM0ODE0NTIyYWQxOTMwMjAwMTRkZDYxMSIsInVzZXJfaWQiOjZ9.jM1mP-KrqFARbG8RXydDKkMHzQHu13h3MJCtec7Uol0"
+}
+OR
+status code : HTTP_200_OK
+<b>Data_this_will_return</b> -
+{
+    "detail": "No active account found with the given credentials"
+}
+status code : HTTP_400_BAD_REQUEST
+</li></pre></ul>
+</li>
+
+
+<li><h4>User Details related URLS</h4>
+    <ul>
+        <li>
+    URL(GET) - [http://127.0.0.1:8000/accounts/user_details/]</li><pre>
+    <li><b>Data_to_be_given</b> - It will take valid authorization token to visit else it will show error. And if authorization token is expired then refresh the same and along with verification token
+        <b>Data_this_will_return</b> -
+        {
+            "userid": "manav014",
+            "home": "manav",
+            "email_address": "manav@gmail.com",
+            "mobile": "manav",
+            "fname": "manav",
+            "lname": "manav"
+        }
+        status code : HTTP_200_OK        
+
+</li>
+</pre></ul>
+    </li>
+
+
+    <li><h4>Business Registeration related URLS</h4>
+        <ul>
+            <li>
+        URL(Post) - [http://127.0.0.1:8000/accounts/business/register/]</li><pre>
+        <li><b>Data_to_be_given</b> - It will take valid authorization token to visit else it will show error. And if authorization token is expired then refresh the same  it will take pan_no and other details of seller
+        
+
+    <b>Data_this_will_return</b> -
+{
+    "detail": "Business Account Registered Successfully"
+}
+status code : HTTP_200_OK
+OR 
+<b>Data_this_will_return</b> - 
+{
+    "detail": "Already a Business Account"
+}
+status code : HTTP_400_BAD_REQUEST
+
+<b>Data_this_will_return</b> - 
+{
+    "detail": "Fields Missing"
+}
+status code : HTTP_400_BAD_REQUEST
+    </li>
+    </pre></ul>
+        </li>
+        <li><h4>Business Account verification related URLS</h4>
+            <ul>
+                <li>
+            URL(Post) - [http://127.0.0.1:8000/accounts/business/verify/]</li><pre>
+            <li><b>Data_to_be_given</b> - It will take valid authorization token to visit else it will show error. And if authorization token is expired then refresh the same
+            
+        <b>Data_this_will_return</b> -
+        {
+            "detail": "It is not a Business Account"
+        }
+        status code: HTTP_400_BAD_REQUEST
+        OR 
+        <b>Data_this_will_return</b> - 
+        {
+            "detail": "It is a Business Account"
+        }
+        status code: HTTP_200_OK
+        </li>
+        </pre></ul>
+            </li>
+        
+</ol>
+
+
+<h1>VALIDATIONS</h1>
+<ol>
+    <li><b>Checks for Password</b>
+    <ol>
+    <li>Username can not contain any special character except underscore(_).</li>
+    <li>Should not be already present in our database.</li>
+    </ol></li>
+</ol>
+<h1>FIELD NAMES for general user</h1>
+<ul><li><b>For User :</b> userid, email_address, home, mobile, fname, lname, pass</li></ul>
+<ul><li><b>For Backend :</b> username, email, address, contact, first_name, last_name, password</li></ul>
+<br><br>
+<h1>FIELD NAMES for business user</h1>
+<ul><li><b>For User :</b> pan_no</li></ul>
+<ul><li><b>For Backend :</b> pan_number</li></ul>
+<br><br><br><br><br><br>
+</body>
+</html>

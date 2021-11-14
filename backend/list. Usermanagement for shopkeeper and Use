@@ -1,0 +1,31 @@
+Shop Modelling: things to be added later
+    1. which user is the most frequent user
+    2. which item is the most sought for in the shop 
+    3. which category is the most sought for in the shop 
+    4. data for which item a specific user repeats order for
+
+Weight in products to be made specific i.e. kg or g
+
+todo:
+    1. Address_Management views(list_all, specific address details, modify address, delete address, add address)(aashutosh)
+    2. Transactions views
+    4. Improve some frontend(M)
+    5. order is to be linked to user with many to one field 
+    6. Location and product search 
+    7. Read more ob mapbox api and how to fetch nearest shops(M)
+    8. Fetch 1 best product of each seller for front carousel
+    9. How will we fetch the best selling products of a shop (Aashutosh)
+    10. Accounts page for frontend(Frontend Team)
+
+dONE:
+    1. Foreign key and other time complexions in sql and writing better sql queries(manav)
+    2. profile view for Business Account()(M)
+
+
+HELP :
+on_delete values with meanings :  
+"No! Please! Don't! I can't live without you!" (which is said PROTECT or RESTRICT in Django/SQL)
+"All right, if I'm not yours, then I'm nobody's" (which is said SET_NULL)
+"Good bye world, I can't live without article_B" and commit suicide (this is the CASCADE behavior).
+"It's OK, I've got spare lover, and I'll reference article_C from now" (SET_DEFAULT, or even SET(...)).
+"I can't face reality, and I'll keep calling your name even if that's the only thing left to me!" (DO_NOTHING)
